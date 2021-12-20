@@ -13,7 +13,7 @@ function M.tidy_up()
     vim.cmd[[:keepjumps keeppatterns %s/\s\+$//e]]
 
     -- delete all lines at end of buffer, see source 2
-    vim.cmd[[:keepjumps keeppatterns silent! 0;/^\%(\n*.\)\@!/ + 1,$d]]
+    vim.cmd[[:keepjumps keeppatterns silent! 0;/^\%(\n*.\)\@!/ + 0,$d]]
 
     -- get row count after line deletion
     local end_row = vim.api.nvim_buf_line_count( 0 )
